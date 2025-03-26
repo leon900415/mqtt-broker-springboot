@@ -1,0 +1,21 @@
+server:
+  port: 8090    # 设置项目端口号
+spring:
+  application:
+    name: mqtt-demo
+
+mqtt:
+  broker:
+    url: tcp://47.111.142.247:1883  # EMQX broker URL
+    client-id: ${random.uuid}         # Client ID
+    username: kingdom_test           # Username for authentication
+    password: kaide           # Password
+    timeout: 1800                       # Connection timeout (seconds)
+    keep-alive-interval: 60           # Keep alive interval (seconds)
+  publisher:
+    default-topic: default/topic      # Default publish topic
+    default-qos: 1                    # Default QoS level
+    default-retained: false           # Whether to retain messages
+  subscriber:
+    topics: topic1,topic2             # Topics to subscribe to
+    qos: 2                            # Subscription QoS level
